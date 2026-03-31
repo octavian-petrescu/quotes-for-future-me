@@ -8,10 +8,8 @@ class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props;
 
-    const title = "Stoic Quotes | The best quotes from the great Roman Stoics";
-    const imgSrc = "https://stoic-quotes.com/marcus-aurelius.jpg";
-    const description =
-      "The very best Stoic quotes from the three great Roman Stoics: Marcus Aurelius, Seneca, and Epictetus. Presented in bitesize chunks, learn from their wisdom and bring Stoicism into your everyday life.";
+    const title = "Quotes for Future Me";
+    const description = "A personal collection of reminders, reflections, and lines worth returning to.";
 
     return (
       <>
@@ -31,24 +29,12 @@ class App extends NextApp {
               content: description,
             },
             {
-              property: "og:image",
-              content: imgSrc,
-            },
-            {
-              name: "twitter:image",
-              content: imgSrc,
-            },
-            {
               property: "og:type",
               content: "website",
             },
             {
               name: "twitter:card",
-              content: "summary_large_image",
-            },
-            {
-              name: "twitter:creator",
-              content: "benhoneywill",
+              content: "summary",
             },
             {
               name: "twitter:title",
@@ -60,11 +46,11 @@ class App extends NextApp {
             },
             {
               name: "keywords",
-              content: "Stoic, Stoicism, Marcus, Aurelius, Seneca, Epictetus, Roman, Philosophy, Quotes, Inspirational",
+              content: "quotes, writing, reflections, reminders, personal notes",
             },
             {
               name: "theme-color",
-              content: "#0c0c0c",
+              content: "#000000",
             },
           ].map((props) => (
             <meta key={props.name || props.property} {...props} />

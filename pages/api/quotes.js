@@ -1,9 +1,8 @@
 import Cors from "cors";
 import { track } from "@vercel/analytics/server";
 
-import data from "../../data/quotes.json";
-import { shuffle } from "../../helpers/general";
 import { initMiddleware } from "../../helpers/middleware";
+import { getRandomQuotes } from "../../helpers/quotes";
 
 const cors = initMiddleware(
   Cors({
@@ -23,6 +22,6 @@ export default async function getQuotes(req, res) {
     return res.status(422).json({ error: "`num` must be an integer from 1 to 100." });
   }
 
-  const quotes = shuffle(data.quotes).slice(0, count);
+  const quotes = getRandomQuotes(count);
   return res.status(200).json(quotes);
 };

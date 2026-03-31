@@ -1,11 +1,5 @@
 import React from "react";
-import { Global, css, keyframes } from "@emotion/react";
-
-const backgroundShift = keyframes`
-  0% { background-position: 100%, 0% 50%; }
-  50% { background-position: 100%, 100% 50%; }
-  100% { background-position: 100%, 0% 50%; }
-`;
+import { Global, css } from "@emotion/react";
 
 const GlobalStyle = () => (
   <Global
@@ -17,7 +11,7 @@ const GlobalStyle = () => (
       }
       html {
         line-height: 1.15;
-        background-color: #0c0c0c;
+        background-color: #000000;
         -webkit-text-size-adjust: 100%;
         height: 100%;
       }
@@ -26,11 +20,7 @@ const GlobalStyle = () => (
         margin: 0;
         padding: 0;
         color: rgba(255, 255, 255, 0.9);
-        background-color: #0c0c0c;
-        background: radial-gradient(ellipse at center, transparent 0%, transparent 40%, #0c0c0c 80%, #0c0c0c 100%),
-          linear-gradient(270deg, #111111, #2c2c2c, #111111);
-        background-size: 100%, 800% 800%;
-        animation: ${backgroundShift} 20s ease infinite;
+        background-color: #000000;
       }
       #__next {
         height: 100%;

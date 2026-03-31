@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { fetchQuote } from "../helpers/api";
 import { QuoteProvider } from "../contexts/quote";
+import { getRandomQuote } from "../helpers/quotes";
 import HomeView from "../components/home-view";
 
 const HomePage = ({ quote, error }) => (
@@ -12,15 +12,13 @@ const HomePage = ({ quote, error }) => (
 );
 
 export const getStaticProps = async () => {
-  let quote = null;
-  let error = null;
-  try {
-    quote = await fetchQuote();
-  } catch (err) {
-    error = err;
-  }
-
-  return { props: { quote, error }, revalidate: 10 };
+  return {
+    props: {
+      quote: getRandomQuote(),
+      error: null
+    },
+    revalidate: 10
+  };
 };
 
 HomePage.defaultProps = {
